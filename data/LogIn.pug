@@ -1,0 +1,29 @@
+extends ../layout/addcss
+block adcss 
+    h3 LogIn
+    
+    form.container(acction='/login',method='POST')
+        .form-group
+            label(for='email') Email:
+            input#email.form-control(name='email',type="email",value= error ? error.email : "")
+            if err
+                each value in err
+                    if value =="loi nhap email"
+                        .alert.alert-danger= "Nhập đầy đủ thông tin"
+            if err
+                each value in err
+                    if value =="Wrong email"
+                        .alert.alert-danger= "Wrong email"            
+        .form-group
+            label(for='password') Password:
+            input#password.form-control(name='password',type="password",value= error ? error.password : "")
+            if err
+                each value in err
+                    if value =="loi nhap password"
+                        .alert.alert-danger= "Nhập đầy đủ thông tin"
+            if err
+                each value in err
+                    if value =="Wrong password"
+                        .alert.alert-danger= "Wrong password"            
+
+        button.btn.btn-danger Submit

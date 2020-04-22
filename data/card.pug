@@ -1,0 +1,7 @@
+extends ../layout/addcss
+block adcss
+	h4 Sản phẩm đã mua
+	each val in sp
+		.container-fluid
+			span= val.ten+": "
+			span= val.sl+" sản phẩm"

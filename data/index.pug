@@ -1,0 +1,20 @@
+extends ../layout/addcss
+block adcss	
+	h1 Method Post
+	a.btn.btn-primary(href="/tinh/add") Thêm mới
+
+
+	table.table
+		tr
+			th Avatar
+			th Tỉnh/thành phố
+			th Số điện thoại
+			th Another
+		each value in tinh
+			tr
+				td
+					img(src=value.avatar,width="23")
+				td= value.ad
+				td= value.phone
+				td
+					a(href='/tinh/'+value.id) View		

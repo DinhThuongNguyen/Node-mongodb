@@ -1,0 +1,24 @@
+extends ../layout/addcss
+block adcss 
+    h3 Thêm tỉnh
+    
+    form.container(action='/tinh/add', method='POST', enctype='multipart/form-data')
+        .form-group
+            label(for='name') Tỉnh/thành phố:
+            input#name.form-control(name='ad',type="text",value= error ? error.ad : "")
+        if err
+            each value in err
+                if value =="loi nhap tinh"
+                    .alert.alert-danger= "loi nhap tinh"
+        .form-group
+            label(for='phone') Số điện thoại:
+            input#phone.form-control(name='phone',type="text",value= error ? error.phone : "")
+            if err
+                each value in err
+                    if value =="loi nhap phone"
+                        .alert.alert-danger= "loi nhap phone"
+        .form-group
+            label(for='avatar') Avatar
+            input#avatar.form-control-file(name='avatar',type="file")                
+
+        button.btn.btn-danger Submit                 

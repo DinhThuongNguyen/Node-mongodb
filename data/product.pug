@@ -1,0 +1,32 @@
+extends ../layout/addcss
+block adcss
+    h1 Product
+    .container
+        .row
+            each value in sp
+                .col-sm-6.col-md-4.col-lg-3
+                    .card.mb-3
+                        img.card-img-top(src=value.image, alt=value.id)
+                        .card-body
+                            h5.card-title= value.name
+                            p.card-text= value.description
+                            a.btn.btn-success(href='card/add/'+value.id) Add to card
+            
+        nav.d-flex.justify-content-center.navbar.navbar-light(style='background-color: #e3f2fd;')(aria-label='Page navigation example')
+          ul.pagination
+            if page_hientai == 1
+                li.page-item.disabled
+                    a.page-link(href='#', tabindex='-1', aria-disabled='true') Previous
+            else
+                li.page-item
+                  a.page-link(href='/product?page='+(page_hientai - 1)) Previous      
+            each value_page in so_trang
+              li.page-item
+                a.page-link(href='/product?page='+ value_page,style= value_page == page_hientai?'background-color: #1f1b58;' : 'background-color: none;' )= value_page
+            if page_hientai >= page_cuoi
+                li.page-item.disabled
+                    a.page-link(href='#', tabindex='-1', aria-disabled='true') Next
+            else
+                li.page-item
+                    a.page-link(href='/product?page='+(page_hientai + 1)) Next
+        

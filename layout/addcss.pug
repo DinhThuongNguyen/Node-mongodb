@@ -1,0 +1,21 @@
+html
+    head
+        link(rel='stylesheet',href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+      
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.class_css
+          a.navbar-brand(href='#') Navbar
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link(href='/')
+                  | Home 
+                  span.sr-only (current)
+              li.nav-item
+                a.nav-link(href='/tinh') T&#x1EC9;nh/th&agrave;nh ph&#x1ED1;
+              li.nav-item
+                a.nav-link(href='/product/card') Card  
+        .container.pt-3
+            block adcss
